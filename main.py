@@ -12,11 +12,18 @@ bg = Image.new('RGB', (800, 800), random.choice(colors)) #choose a random number
 
 #add Logo
 
-logo = Image.open("logo.png")
+#Logo Black
+#logo = Image.open("logoblack.png") #logo image size need to be 128x128
+#Grey, Alpha = logo.split()
 
-imgbg = bg.paste(logo, (0,0,0,0))
+#White Logo
+logo = Image.open("logowhite.png") #logo image size need to be 128x128
+Red, Green, Blue, Alpha = logo.split()
 
-imgbg.save("./img/test.png")
+
+bg.paste(logo, (660, 672), Alpha)
+bg.save("bg.png")
+
 
 #GET a random quote
 
