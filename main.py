@@ -1,7 +1,9 @@
 #imports
-from PIL import Image
+from PIL import Image, ImageFont
 import random
 import shutil, os
+
+font = ImageFont.truetype()
 
 print("#" * 10)
 print("Quote Maker")
