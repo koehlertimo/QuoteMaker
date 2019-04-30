@@ -13,21 +13,20 @@ textcolor = (255, 255, 255)
 font = ImageFont.truetype('Roboto-Bold.ttf', size=45)
 draw = None
 
-
+#Intro
 print("#" * 10)
 print("Quote Maker")
 print("#" * 10)
-
-print("How much Quotes do you want to generate?")
-sessions = int(input(":"))
 print("Which text do want to put on this Picture?")
 message = input(":")
+print("How much Quotes do you want to generate?")
+sessions = int(input(":"))
 print("Message:" + message)
 
 
 while count != sessions:
     count = count + 1
-    print(count)
+    print(str(count) + ". Image in process")
 
     ###Generate a Color##
     #a list of rgb color codes
@@ -45,11 +44,17 @@ while count != sessions:
     Red, Green, Blue, Alpha = logo.split()
     img.paste(logo, (660, 672), Alpha)
 
+    print("created Background")
+
     draw = ImageDraw.Draw(img)
     draw.text((x, y), message, fill=textcolor, font=font)
 
+    print("Text on Image placed")
 
     filename = "Quote" + str(count) + ".png"
     img.save(filename)
     shutil.move(filename, 'img')
+    print("File saved and moved to 'img' Folder ")
+
+
 
