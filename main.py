@@ -1,7 +1,17 @@
 #imports
-from PIL import Image, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import random
 import shutil, os
+
+#Variables
+img = None
+sessions =  0
+(x, y) = (1, 1)
+message = ""
+count = 0 
+textcolor = (255, 255, 255)
+font = ImageFont.truetype('Roboto-Bold.ttf', size=45)
+draw = None
 
 
 print("#" * 10)
@@ -10,8 +20,10 @@ print("#" * 10)
 
 print("How much Quotes do you want to generate?")
 sessions = int(input(":"))
+print("Which text do want to put on this Picture?")
+message = input(":")
+print("Message:" + message)
 
-count = 0 
 
 while count != sessions:
     count = count + 1
@@ -31,9 +43,12 @@ while count != sessions:
     #White Logo
     logo = Image.open("logowhite.png") #logo image size need to be 128x128
     Red, Green, Blue, Alpha = logo.split()
-
-
     img.paste(logo, (660, 672), Alpha)
+
+    draw = ImageDraw.Draw(img)
+    draw.text((x, y), message, fill=textcolor, font=font)
+
+
     filename = "Quote" + str(count) + ".png"
     img.save(filename)
     shutil.move(filename, 'img')
