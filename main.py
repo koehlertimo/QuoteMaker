@@ -2,11 +2,12 @@
 from PIL import Image, ImageDraw, ImageFont
 import random
 import shutil, os
+import csv
 
 #Variables
 img = None
 sessions =  0
-(x, y) = (1, 1)
+(x, y) = (400, 400)
 message = ""
 count = 0 
 textcolor = (255, 255, 255)
@@ -40,9 +41,10 @@ while count != sessions:
     #Grey, Alpha = logo.split()
 
     #White Logo
-    logo = Image.open("logowhite.png") #logo image size need to be 128x128
+    logo = Image.open("logowhite-64x64.png") #logo image size need to be 128x128
     Red, Green, Blue, Alpha = logo.split()
-    img.paste(logo, (660, 672), Alpha)
+    img.paste(logo, (730, 736), Alpha)
+
 
     print("created Background")
 
@@ -56,5 +58,8 @@ while count != sessions:
     shutil.move(filename, 'img')
     print("File saved and moved to 'img' Folder ")
 
+print("\n")
+print("\n")
+print(str(count) + " images succsesfully created")
 
 
