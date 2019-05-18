@@ -1,8 +1,10 @@
 #imports
-from PIL import Image, ImageDraw, ImageFont
-import random
-import shutil, os
 import csv
+import os
+import random
+import shutil
+
+from PIL import Image, ImageDraw, ImageFont
 
 #Variables
 img = None
@@ -61,5 +63,3 @@ while count != sessions:
 print("\n")
 print("\n")
 print(str(count) + " images succsesfully created")
-
-
