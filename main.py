@@ -6,7 +6,7 @@ import shutil
 
 from PIL import Image, ImageDraw, ImageFont
 
-s
+
 
 #Variables
 img = None
