@@ -1,5 +1,6 @@
 # Quote Maker
 > Simple script that creates Quote Images
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
 
 This script get a quote from an csv file and put this text on an random color background and save this as an png.
 
