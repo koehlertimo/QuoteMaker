@@ -17,7 +17,7 @@ pip install -r Requirments.txt
 python main.py
 ```
 
-If it don`t please make an issue request and i will help you.
+If it don`t work please make an issue request and i will help you.
 
 ## Release History
 
