@@ -3,10 +3,9 @@ import csv
 import os
 import random
 import shutil
+import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
-
-
 
 #Variables
 img = None
@@ -49,14 +48,15 @@ while count != sessions:
     img.paste(logo, (730, 736), Alpha)
 
 
-    print("created Background")
+    print("created Background")       
 
     draw = ImageDraw.Draw(img)
-    draw.text((x, y), message, fill=textcolor, font=font)
+    w, h = draw.textsize(message, font)
+    draw.text(((800-w)/2, (800-h)/2), message, fill=textcolor, font=font)
 
     print("Text on Image placed")
 
-    filename = "Quote" + str(count) + ".png"
+    filename = str(message) +".png"
     img.save(filename)
     shutil.move(filename, 'img')
     print("File saved and moved to 'img' Folder ")
